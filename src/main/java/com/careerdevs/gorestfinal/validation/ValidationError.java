@@ -1,5 +1,7 @@
 package com.careerdevs.gorestfinal.validation;
 
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,5 +26,10 @@ public class ValidationError {
         return errorMessage.toString();
     }
 
+    public String toJSONString () {
+
+        return new JSONObject(errors).toString();
+
+    }
 
 }
