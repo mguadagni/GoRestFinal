@@ -222,7 +222,7 @@ public class PostController {
 
     }
 
-    @PostMapping
+    @PostMapping ("/{id}")
     public ResponseEntity<?> uploadPostById (
             @PathVariable ("id") String postId,
             RestTemplate restTemplate
@@ -238,7 +238,7 @@ public class PostController {
 
             int pID = Integer.parseInt(postId);
 
-            String url = "https://gorest.co.in/public/v2/users/" + pID;
+            String url = "https://gorest.co.in/public/v2/posts/" + pID;
 
             Post foundPost = restTemplate.getForObject(url, Post.class);
 
