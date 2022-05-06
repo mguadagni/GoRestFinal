@@ -2,6 +2,7 @@ package com.careerdevs.gorestfinal.contollers;
 
 import com.careerdevs.gorestfinal.models.ToDo;
 import com.careerdevs.gorestfinal.repositories.ToDoRepository;
+import com.careerdevs.gorestfinal.repositories.UserRepository;
 import com.careerdevs.gorestfinal.utils.ApiErrorHandling;
 import com.careerdevs.gorestfinal.utils.BasicUtils;
 import com.careerdevs.gorestfinal.validation.ToDoValidation;
@@ -25,6 +26,9 @@ public class ToDoController {
 
     @Autowired
     ToDoRepository toDoRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     @GetMapping("/all")
     public ResponseEntity<?> getAllToDos () {
@@ -139,7 +143,7 @@ public class ToDoController {
 
         try {
 
-            ValidationError errors = ToDoValidation.validateToDo(newToDo, toDoRepository, false);
+            ValidationError errors = ToDoValidation.validateToDo(newToDo, toDoRepository, userRepository, false);
 
             if (errors.hasError()) {
 
@@ -273,7 +277,7 @@ public class ToDoController {
 
         try {
 
-            ValidationError errors = ToDoValidation.validateToDo(newToDo, toDoRepository, true);
+            ValidationError errors = ToDoValidation.validateToDo(newToDo, toDoRepository, userRepository, true);
 
             if (errors.hasError()) {
 

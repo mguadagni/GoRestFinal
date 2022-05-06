@@ -2,6 +2,7 @@ package com.careerdevs.gorestfinal.contollers;
 
 import com.careerdevs.gorestfinal.models.Post;
 import com.careerdevs.gorestfinal.repositories.PostRepository;
+import com.careerdevs.gorestfinal.repositories.UserRepository;
 import com.careerdevs.gorestfinal.utils.ApiErrorHandling;
 import com.careerdevs.gorestfinal.utils.BasicUtils;
 import com.careerdevs.gorestfinal.validation.PostValidation;
@@ -25,6 +26,9 @@ public class PostController {
 
     @Autowired
     PostRepository postRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     @GetMapping ("/all")
     public ResponseEntity<?> getAllPosts () {
@@ -139,7 +143,7 @@ public class PostController {
 
         try {
 
-            ValidationError errors = PostValidation.validatePost(newPost, postRepository, false);
+            ValidationError errors = PostValidation.validatePost(newPost, postRepository, userRepository, false);
 
             if (errors.hasError()) {
 
@@ -273,7 +277,7 @@ public class PostController {
 
         try {
 
-            ValidationError errors = PostValidation.validatePost(newPost, postRepository, true);
+            ValidationError errors = PostValidation.validatePost(newPost, postRepository, userRepository, true);
 
             if (errors.hasError()) {
 

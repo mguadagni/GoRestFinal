@@ -4,6 +4,7 @@ import com.careerdevs.gorestfinal.models.Comment;
 import com.careerdevs.gorestfinal.models.Post;
 import com.careerdevs.gorestfinal.repositories.CommentRepository;
 import com.careerdevs.gorestfinal.repositories.PostRepository;
+import com.careerdevs.gorestfinal.repositories.UserRepository;
 import com.careerdevs.gorestfinal.utils.ApiErrorHandling;
 import com.careerdevs.gorestfinal.utils.BasicUtils;
 import com.careerdevs.gorestfinal.validation.CommentValidation;
@@ -28,6 +29,9 @@ public class CommentController {
 
     @Autowired
     CommentRepository commentRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     @GetMapping ("/all")
     public ResponseEntity<?> getAllComments () {
@@ -142,7 +146,7 @@ public class CommentController {
 
         try {
 
-            ValidationError errors = CommentValidation.validateComment(newComment, commentRepository, false);
+            ValidationError errors = CommentValidation.validateComment(newComment, commentRepository, userRepository, false);
 
             if (errors.hasError()) {
 
@@ -276,7 +280,7 @@ public class CommentController {
 
         try {
 
-            ValidationError errors = CommentValidation.validateComment(newComment, commentRepository, true);
+            ValidationError errors = CommentValidation.validateComment(newComment, commentRepository, userRepository, true);
 
             if (errors.hasError()) {
 

@@ -45,7 +45,7 @@ public class ToDo {
 
     @Override
     public String toString() {
-        return "ToDoModel{" +
+        return "ToDo{" +
                 "id=" + id +
                 ", userId=" + userId +
                 ", title='" + title + '\'' +
@@ -53,5 +53,4 @@ public class ToDo {
                 ", status='" + status + '\'' +
                 '}';
     }
-
 }

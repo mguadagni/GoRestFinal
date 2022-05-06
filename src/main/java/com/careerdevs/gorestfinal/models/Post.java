@@ -7,20 +7,20 @@ public class Post {
 
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
-    private long user_id;
+    private Integer user_id;
 
     private String title;
 
     @Column(length = 512)
     private String body;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public long getUser_id() {
+    public Integer getUser_id() {
         return user_id;
     }
 
