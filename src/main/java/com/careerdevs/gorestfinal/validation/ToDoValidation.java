@@ -28,7 +28,7 @@ public class ToDoValidation {
         String toDoTitle = toDo.getTitle();
         String toDoDueOn = toDo.getDueOn();
         String toDoStatus = toDo.getStatus();
-        Integer toDoUserID = toDo.getUserId();
+        Long toDoUserID = toDo.getUserId();
 
         if (toDoTitle == null || toDoTitle.trim().equals("")) {
             errors.addError("title", "Title can not be left blank");

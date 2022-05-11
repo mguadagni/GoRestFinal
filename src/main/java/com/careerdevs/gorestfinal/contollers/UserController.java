@@ -54,7 +54,7 @@ public class UserController {
 
             }
 
-            int uID = Integer.parseInt(id);
+            long uID = Long.parseLong(id);
 
             Optional<User> foundUser = userRepository.findById(uID);
 
@@ -108,7 +108,7 @@ public class UserController {
 
             }
 
-            int uID = Integer.parseInt(id);
+            long uID = Long.parseLong(id);
 
             Optional<User> foundUser = userRepository.findById(uID);
 

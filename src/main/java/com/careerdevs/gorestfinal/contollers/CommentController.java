@@ -61,7 +61,7 @@ public class CommentController {
 
             }
 
-            int cID = Integer.parseInt(id);
+            Long cID = Long.parseLong(id);
 
             Optional<Comment> foundComment = commentRepository.findById(cID);
 
@@ -115,7 +115,7 @@ public class CommentController {
 
             }
 
-            int cID = Integer.parseInt(id);
+            long cID = Long.parseLong(id);
 
             Optional<Comment> foundComment = commentRepository.findById(cID);
 

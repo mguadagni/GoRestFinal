@@ -12,20 +12,20 @@ public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     @JsonProperty ("post_id")
-    private int postId;
+    private Long postId;
 
     private String name;
     private String email;
     private String body;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public int getPostId() {
+    public Long getPostId() {
         return postId;
     }
 

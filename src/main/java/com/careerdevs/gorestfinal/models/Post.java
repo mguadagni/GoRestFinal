@@ -9,7 +9,7 @@ public class Post {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Long id;
 
-    private Integer user_id;
+    private Long user_id;
 
     private String title;
 
@@ -20,7 +20,7 @@ public class Post {
         return id;
     }
 
-    public Integer getUser_id() {
+    public Long getUser_id() {
         return user_id;
     }
 

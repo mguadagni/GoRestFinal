@@ -58,9 +58,9 @@ public class PostController {
 
             }
 
-            int pID = Integer.parseInt(id);
+            long pID = Long.parseLong(id);
 
-            Optional<Post> foundPost = postRepository.findById((long)pID);
+            Optional<Post> foundPost = postRepository.findById(pID);
 
             if (foundPost.isEmpty()) {
 

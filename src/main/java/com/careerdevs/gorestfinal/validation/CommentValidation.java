@@ -28,7 +28,7 @@ public class CommentValidation {
         String commentName = comment.getName();
         String commentEmail = comment.getEmail();
         String commentBody = comment.getBody();
-        Integer commentPostId = comment.getPostId();
+        Long commentPostId = comment.getPostId();
 
         if (commentName == null || commentName.trim().equals("")) {
             errors.addError("name", "Name can not be left blank");

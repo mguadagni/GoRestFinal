@@ -58,7 +58,7 @@ public class ToDoController {
 
             }
 
-            int tID = Integer.parseInt(id);
+            Long tID = Long.parseLong(id);
 
             Optional<ToDo> foundToDo = toDoRepository.findById(tID);
 
@@ -112,7 +112,7 @@ public class ToDoController {
 
             }
 
-            int tID = Integer.parseInt(id);
+            long tID = Long.parseLong(id);
 
             Optional<ToDo> foundToDo = toDoRepository.findById(tID);
 

@@ -11,10 +11,10 @@ public class ToDo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     @JsonProperty ("user_id")
-    private int userId;
+    private Long userId;
 
     private String title;
 
@@ -23,11 +23,11 @@ public class ToDo {
 
     private String status;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public int getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
